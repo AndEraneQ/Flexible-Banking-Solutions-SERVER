@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,18 +24,20 @@
                     <!-- End of Form Header -->
 
                     <!-- Registration Form -->
-                        <form action="" class="reg-form">
+                        <form:form action="/register" class="reg-form" modelAttribute="registerUser">
                             <!-- Row -->
                                 <div class="row">
                                     <!--From Group-->
                                     <div class="form-group col">
-                                        <input type="text" name = "first_name" class="form-control form-control-lg" placeholder="Enter First Name"/>
+                                        <form:input type="text" path = "first_name" class="form-control form-control-lg" placeholder="Enter First Name"/>
+                                        <form:errors path="first_name" class="text-white bg-danger"/>
                                     </div>
                                     <!--End of From Group-->
 
                                     <!--From Group-->
                                     <div class="form-group col">
-                                        <input type="text" name = "last_name" class="form-control form-control-lg" placeholder="Enter Last Name"/>
+                                        <form:input type="text" path = "last_name" class="form-control form-control-lg" placeholder="Enter Last Name"/>
+                                        <form:errors path="last_name" class="text-white bg-danger"/>
                                     </div>
                                     <!--End of From Group-->
                                 </div>
@@ -39,7 +45,8 @@
 
                             <!--From Group-->
                             <div class="form-group col">
-                                <input type="text" name = "email" class="form-control form-control-lg" placeholder="Enter Email"/>
+                                <form:input type="text" path = "email" class="form-control form-control-lg" placeholder="Enter Email"/>
+                                <form:errors path="email" class="text-white bg-danger"/>
                             </div>
                             <!--End of From Group-->
 
@@ -47,13 +54,15 @@
                             <div class="row">
                                 <!--From Group-->
                                 <div class="form-group col">
-                                    <input type="password" name = "password" class="form-control form-control-lg" placeholder="Enter Password"/>
+                                    <form:input type="password" path = "password" class="form-control form-control-lg" placeholder="Enter Password"/>
+                                    <form:errors path="password" class="text-white bg-danger"/>
                                 </div>
                                 <!--End of From Group-->
 
                                 <!--From Group-->
                                 <div class="form-group col">
-                                    <input type="password" name = "confirm_pasword" class="form-control form-control-lg" placeholder="Confirm Password"/>
+                                    <input type="password" name = "confirm_password" class="form-control form-control-lg" placeholder="Confirm Password"/>
+                                    <small class="text-white bg-danger">${confirm_pass}</small>
                                 </div>
                                 <!--End of From Group-->
                             </div>
@@ -65,7 +74,7 @@
                         </div>
                         <!--End of From Group-->
 
-                        </form>
+                        </form:form>
                     <!-- End of Registration Form -->
 
                     <!-- Card Text -->

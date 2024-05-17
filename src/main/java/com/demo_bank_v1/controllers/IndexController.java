@@ -19,16 +19,24 @@ public class IndexController {
     @GetMapping("/login")
     public ModelAndView getLogin(){
         ModelAndView getLoginPage = new ModelAndView("login");
-        getLoginPage.addObject("PageTitle","Home");
+        getLoginPage.addObject("PageTitle","Login");
         System.out.println("In Login Page Controller");
         return getLoginPage;
     }
 
-    @GetMapping("/register")
-    public ModelAndView getRegister(){
-        ModelAndView getRegisterPage = new ModelAndView("register");
-        getRegisterPage.addObject("PageTitle","Home");
-        System.out.println("In Register Page Controller");
-        return getRegisterPage;
+    @GetMapping("/error")
+    public ModelAndView getError(){
+        ModelAndView getErrorPage = new ModelAndView("error");
+        getErrorPage.addObject("PageTitle","Errors");
+        System.out.println("In Error Page Controller");
+        return getErrorPage;
+    }
+
+    @GetMapping("/verify")
+    public ModelAndView getVerify(){
+        ModelAndView getVerifyPage = new ModelAndView("login");
+        getVerifyPage.addObject("PageTitle","Verify");
+        System.out.println("In Verify Page Controller");
+        return getVerifyPage;
     }
 }
