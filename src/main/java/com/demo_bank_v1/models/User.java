@@ -20,7 +20,7 @@ public class User {
     private String last_name;
     @Email
     @NotEmpty(message = "Email cannot be empty")
-    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n", message = "Invalid email")
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email")
     private String email;
     @NotEmpty(message = "Password cannot be empty")
     @NotNull

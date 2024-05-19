@@ -19,10 +19,10 @@ public class MailConfig {
         props.put("mail.debug","true");
 
         // Set Mail Credentials:
-        emailConfig.setHost("localhost");
-        emailConfig.setPort(25);
-        emailConfig.setUsername("no-replay@somecompany.com");
-        emailConfig.setPassword("Leagueoflegend123");
+        emailConfig.setHost("sandbox.smtp.mailtrap.io");
+        emailConfig.setPort(2525);
+        emailConfig.setUsername("7ae4bdb59fcaca");
+        emailConfig.setPassword("427b906cf33f52");
 
         return emailConfig;
     }
