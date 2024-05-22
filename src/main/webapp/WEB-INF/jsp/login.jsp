@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +25,22 @@
 
                 <!-- Display Message -->
                     <c:if test="${requestScope.success != null}">
-                        <div class ="alert alert-success text-center border border-success">
+                        <div class="alert alert-success text-center border border-success">
                             <b>${requestScope.success}</b>
                         </div>
                     </c:if>
                 <!-- End Of Display Message -->
 
+                <!-- Display Message -->
+                    <c:if test="${requestScope.error != null}">
+                        <div class ="alert alert-danger text-center border border-danger">
+                             <b>${requestScope.error}</b>
+                        </div>
+                    </c:if>
+                <!-- End Of Display Message -->
+
                 <!-- Login Form -->
-                    <form action="" class="login-form">
+                    <form action="/login" method="POST" class="login-form">
 
                         <!--From Group-->
                         <div class="form-group col">
@@ -40,6 +52,12 @@
                         <div class="form-group col">
                             <input type="password" name = "password" class="form-control form-control-lg" placeholder="Enter Password"/>
                         </div>
+                        <!--End of From Group-->
+
+                        <!--From Group-->
+                            <div class="form-group col">
+                                <input type="hidden" name = "token" value="${token}"/>
+                            </div>
                         <!--End of From Group-->
 
                     <!--From Group-->

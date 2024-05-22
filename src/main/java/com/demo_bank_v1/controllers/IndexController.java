@@ -22,14 +22,6 @@ public class IndexController {
         return getIndexPage;
     }
 
-    @GetMapping("/login")
-    public ModelAndView getLogin(){
-        ModelAndView getLoginPage = new ModelAndView("login");
-        getLoginPage.addObject("PageTitle","Login");
-        System.out.println("In Login Page Controller");
-        return getLoginPage;
-    }
-
     @GetMapping("/error")
     public ModelAndView getError(){
         ModelAndView getErrorPage = new ModelAndView("error");
@@ -53,6 +45,7 @@ public class IndexController {
             return getVerifyPage;
         }
         // End Of Check if token is valid
+
         // update and Verify Account
         userRepository.verifyAccount(token,code);
 
