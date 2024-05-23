@@ -15,7 +15,7 @@
       <div class="card">
         <div class="card-body">
         <!-- Card body -->
-        <form action="" class="add-account-form">
+        <form action="/account/create_account" method ="POST" class="add-account-form">
           <!-- Form Group -->
           <div class="form-group mb-3">
             <label for="">Enter Account Name</label>

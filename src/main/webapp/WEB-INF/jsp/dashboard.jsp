@@ -21,8 +21,30 @@
   <!-- Transact OffCanvas: pulls from the left -->
   <c:import url = "components/transact_offcanvas.jsp"/>
 
-  <!-- Add Accounts OffCanvas: pulls from the left -->
+  <!-- Add Accounts OffCanvas: pulls from the right -->
   <c:import url = "components/add_accounts_offcanvas.jsp"/>
+
+  <!-- Container-->
+   <div class = "container">
+    <!-- Display Message -->
+      <c:if test="${success != null}">
+        <div class ="alert alert-info text-center border border-info">
+          <b>${success}</b>
+        </div>
+      </c:if>
+      <!-- End Of Display Message -->
+
+      <!-- Display Message -->
+        <c:if test="${error != null}">
+          <div class ="alert alert-danger text-center border border-danger">
+            <b>${error}</b>
+          </div>
+        </c:if>
+      <!-- End Of Display Message -->
+   </div>
+  <!-- End Of Container-->
+
+
 
   <c:choose>
     <c:when test="${fn:length(userAccounts) > 0}">
