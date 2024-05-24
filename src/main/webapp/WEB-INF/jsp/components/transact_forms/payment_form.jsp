@@ -6,7 +6,10 @@
       <div class="card payment-card">
         <!-- Card Body -->
         <div class="card-body">
-          <!-- Form Group -->
+
+          <!-- Payment Form -->
+            <form action="/transact/payment" method="POST">
+            <!-- Form Group -->
           <div class="form-group mb-2">
             <label for=""> Account Holder / Beneficiary</label>
             <input type="text" name="beneficiary" class="form-control"
@@ -17,21 +20,24 @@
           <!-- Form Group -->
           <div class="form-group mb-2">
             <label for=""> Beneficiary Account Number</label>
-            <input type="text" name="account_number" class="form-control" placeholder="Enter Beneficiary Account No">
+            <input type="text" name="beneficiary_account_number" class="form-control" placeholder="Enter Beneficiary Account No">
           </div>
           <!-- End Of Form Group -->
 
-          <!-- Form Group -->
-          <div class="form-group">
-            <label for="">Select Account</label>
-            <!-- Select Account Option -->
-            <select name="account_id" class="form-control" id="">
-              <option value="">-- Select Account --</option>
-            </select>
-            <!-- End Of Select Account Option -->
-
-          </div>
-          <!-- End Of Form Group -->
+            <!-- Form Group -->
+            <div class="form-group">
+              <label for="">Select Account</label>
+                <!-- Select Account Option -->
+                <select name="account_id" class="form-control" id="">
+                  <option value="">-- Select Account --</option>
+                    <c:if test ="${userAccounts != null}">
+                      <c:forEach items="${userAccounts}" var = "selectAccount">
+                         <option value="${selectAccount.account_id}">${selectAccount.account_name}</option>
+                      </c:forEach>
+                    </c:if>
+                </select>
+            </div>
+            <!-- End Of Group -->
 
           <!-- Form Group -->
           <div class="form-group mb-2">
@@ -52,6 +58,8 @@
             <button id="transact-btn" class="btn btn-md">Pay</button>
           </div>
           <!-- End Of Form Group -->
+            </form>
+          <!-- End Of Payment Form -->
 
 
         </div>
