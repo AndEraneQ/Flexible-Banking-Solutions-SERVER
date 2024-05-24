@@ -26,7 +26,7 @@ public class User {
     private String email;
     @NotEmpty(message = "Password cannot be empty")
     @NotNull
-    private String password;
+    private String password_;
     private String token;
     private String code;
     private int verified;
@@ -66,12 +66,12 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassword_() {
+        return password_;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword_(String password_) {
+        this.password_ = password_;
     }
 
     public String getToken() {

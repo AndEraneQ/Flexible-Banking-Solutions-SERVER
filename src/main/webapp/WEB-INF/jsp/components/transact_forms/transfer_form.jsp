@@ -6,45 +6,59 @@
       <div class="card transfer-card">
         <!-- Card Body -->
         <div class="card-body">
+
+           <!-- Transfer form-->
+           <form action="/transact/transfer" method = "POST">
           <!-- Form Group -->
-          <div class="form-group">
-            <label for="">Select Account</label>
-            <!-- Select Account Option -->
-            <select name="account_id" class="form-control" id="">
-              <option value="">-- Select Account --</option>
-            </select>
+            <div class="form-group">
+              <label for="">Select Account</label>
+                <!-- Select Account Option -->
+                <select name="transfer_from" class="form-control" id="">
+                  <option value="">-- Select Account --</option>
+                    <c:if test ="${userAccounts != null}">
+                      <c:forEach items="${userAccounts}" var = "selectAccount">
+                         <option value="${selectAccount.account_id}">${selectAccount.account_name}</option>
+                      </c:forEach>
+                    </c:if>
+                </select>
+                <!-- End Of Select Account Option -->
+            </div>
+            <!-- End Of Card Body -->
+
+            <!-- Form Group -->
+            <div class="form-group">
+              <label for="">Select Account</label>
+                <!-- Select Account Option -->
+                <select name="transfer_to" class="form-control" id="">
+                  <option value="">-- Select Account --</option>
+                    <c:if test ="${userAccounts != null}">
+                      <c:forEach items="${userAccounts}" var = "selectAccount">
+                         <option value="${selectAccount.account_id}">${selectAccount.account_name}</option>
+                      </c:forEach>
+                    </c:if>
+                </select>
+            </div>
+            <!-- End Of Group -->
+
+
+            <!-- Form Group -->
+            <div class="form-group mb-2">
+              <label for=""> Enter transfer Amount</label>
+                <input type="text" name="transfer_amount" class="form-control" placeholder="Enter transfer Amount">
+            </div>
+            <!-- End Of Form Group -->
+
+            <!-- Form Group -->
+              <div class="form-group my-2">
+                <button id="" class="btn btn-md transact-btn">Transfer</button>
+              </div>
+            <!-- End Of Form Group -->
             <!-- End Of Select Account Option -->
 
-          </div>
-          <!-- End Of Form Group -->
-
-          <!-- Form Group -->
-          <div class="form-group">
-            <label for="">Select Account</label>
-            <!-- Select Account Option -->
-            <select name="account_id" class="form-control" id="">
-              <option value="">-- Select Account --</option>
-            </select>
-            <!-- End Of Select Account Option -->
-
-          </div>
-          <!-- End Of Form Group -->
-
-          <!-- Form Group -->
-          <div class="form-group mb-2">
-            <label for="">Enter deposit Amount</label>
-            <input type="text" name="transfer_amount" class="form-control" placeholder="Enter Transfer Amount">
-          </div>
-          <!-- End Of Form Group -->
-
-          <!-- Form Group -->
-          <div class="form-group mb-2">
-            <button id="transact-btn" class="btn btn-md ">deposit</button>
-          </div>
-          <!-- End Of Form Group -->
-
-        </div>
-        <!-- End Of Card Body -->
+            </form>
+            <!-- End Of Transfer form-->
+            </div>
+            <!-- End Of Card Body -->
 
       </div>
       <!-- End Of Card: Transfer Card -->
