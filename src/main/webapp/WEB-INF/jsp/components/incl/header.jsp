@@ -14,9 +14,9 @@
 
       <!-- Navigation -->
       <nav class="navigation">
-        <li><a href="">Dashboard</a></li>
-        <li><a href="">Payment</a></li>
-        <li><a href="">Transaction History</a></li>
+        <li><a href="/app/dashboard">Dashboard</a></li>
+        <li><a href="/app/payment_history">Payment</a></li>
+        <li><a href="/app/transact_history">Transaction History</a></li>
       </nav>
       <!-- End Of Navigation -->
 
