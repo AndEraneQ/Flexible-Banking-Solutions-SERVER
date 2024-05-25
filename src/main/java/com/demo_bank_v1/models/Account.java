@@ -1,5 +1,6 @@
 package com.demo_bank_v1.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -17,6 +18,7 @@ public class Account {
     private String account_number;
     private String account_name;
     private String account_type;
+    @Column(nullable = false, columnDefinition = "DECIMAL(10, 2) DEFAULT 0.00")
     private BigDecimal balance;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
